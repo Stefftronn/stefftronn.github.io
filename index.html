@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Topple</title>
+    <script>
+        // Versuche, die App direkt über das Custom Scheme zu öffnen
+        // window.location.search leitet den "?code=1234" Teil weiter
+        window.location.href = "tictactopple://open" + window.location.search;
+
+        // Wenn das nach 1,5 Sekunden nicht klappt (App nicht installiert),
+        // leite den Nutzer zum Google Play Store weiter
+        setTimeout(function() {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.stefftronn.tictactopple";
+        }, 1500);
+    </script>
+</head>
+<body>
+    <p>Öffne Tic Tac Topple...</p>
+</body>
+</html>
