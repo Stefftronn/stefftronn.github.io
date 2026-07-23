@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.stefftronn.tictactopple",
+    "sha256_cert_fingerprints": [
+      "0C:25:F9:67:2B:D8:CE:D8:EC:FA:82:47:B8:0B:42:7F:64:4D:36:E5:24:98:E5:F2:64:11:F2:F1:7E:53:A4:3C"
+    ]
+  }
+}]
