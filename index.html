@@ -3,7 +3,17 @@
 <head>
     <title>Tic Tac Topple</title>
     <script>
-        window.location.href = "https://play.google.com/store/apps/details?id=com.stefftronn.tictactopple";
+        // 1. Grab the "?code=XYZ" part from the URL the QR code scanned
+        var queryString = window.location.search;
+        
+        // 2. Set up the fallback URL in case they don't have the game installed
+        var fallbackUrl = encodeURIComponent("https://play.google.com/store/apps/details?id=com.stefftronn.tictactopple");
+        
+        // 3. Build the Android Intent URL
+        var intentUrl = "intent://stefftronn.github.io/" + queryString + "#Intent;scheme=https;package=com.stefftronn.tictactopple;S.browser_fallback_url=" + fallbackUrl + ";end;";
+        
+        // 4. Force the browser to trigger the intent!
+        window.location.href = intentUrl;
     </script>
 </head>
 <body>
