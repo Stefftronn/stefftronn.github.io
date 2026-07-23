@@ -1,22 +1,20 @@
-<!-- Buttons für den manuellen Klick -->
-    <a href="#" id="openAppBtn" class="btn">Im Spiel öffnen</a><br>
-    
-    <a href="market://details?id=com.stefftronn.tictactopple" class="btn btn-store">Zum Google Play Store</a>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Topple</title>
     <script>
-        var appUrl = "tictactopple://open" + window.location.search;
-        document.getElementById("openAppBtn").href = appUrl;
+        // Versuche, die App direkt über das Custom Scheme zu öffnen
+        // window.location.search leitet den "?code=1234" Teil weiter
+        window.location.href = "tictactopple://open" + window.location.search;
 
-        // Versuch der automatischen Weiterleitung in dein Spiel
-        window.location.href = appUrl;
-
-        // Wenn wir nach 2,5 Sekunden noch auf der Seite sind, ab zum Play Store
+        // Wenn das nach 1,5 Sekunden nicht klappt (App nicht installiert),
+        // leite den Nutzer zum Google Play Store weiter
         setTimeout(function() {
-            if(document.hasFocus()) {
-                // market:// zwingt Android, die Play Store App zu öffnen
-                window.location.href = "market://details?id=com.stefftronn.tictactopple";
-            }
-        }, 2500);
+            window.location.href = "https://play.google.com/store/apps/details?id=com.stefftronn.tictactopple";
+        }, 1500);
     </script>
+</head>
+<body>
+    <p>Öffne Tic Tac Topple...</p>
 </body>
 </html>
